@@ -81,3 +81,6 @@ for _logger_name in (
     "sentence_transformers", "transformers", "urllib3", "requests",
 ):
     logging.getLogger(_logger_name).setLevel(logging.WARNING)
+
+#reranker 模型
+RERANKER_MODEL_NAME = r"D:\huggingface_cache\models--BAAI--bge-reranker-base"
