@@ -7,9 +7,9 @@ from retrieval.product_search import search_product
 
 logger = logging.getLogger(__name__)
 
-history = []
+history_1 = []
 
-def handle_turn(query):
+def handle_turn(query,history = history_1):
     try:
         route = router(query)
         if route=="product":
@@ -31,3 +31,8 @@ def handle_turn(query):
     except Exception as e:
         logger.error("生成回复失败 %s", e)
         return "网络错误，请重新输入"
+
+if __name__ == '__main__':
+    handle_turn("有耳机吗")
+    history_1 = []  # 重新赋值
+    handle_turn("手机多少钱")

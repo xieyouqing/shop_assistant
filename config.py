@@ -39,8 +39,10 @@ HF_HOME = Path(os.getenv("HF_HOME", Path.home() / ".cache" / "huggingface"))
 HF_ENDPOINT = os.getenv("HF_ENDPOINT", "https://hf-mirror.com")
 os.environ.setdefault("HF_HOME", str(HF_HOME))
 os.environ.setdefault("HF_ENDPOINT", HF_ENDPOINT)
-# 强制离线：HF_OFFLINE=1 时只准用本地缓存
-if os.getenv("HF_OFFLINE", "").strip().lower() in ("1", "true", "yes"):
+# 默认强制离线：只准用本地缓存。避免每次加载模型都联网核对、卡在超时重试上
+# （代价：缓存缺失时会立刻报错，而不是静默等待——这是好事，问题暴露更快）
+# 要下载新模型时，显式设 HF_OFFLINE=0
+if os.getenv("HF_OFFLINE", "1").strip().lower() not in ("0", "false", "no"):
     os.environ["TRANSFORMERS_OFFLINE"] = "1"
     os.environ["HF_HUB_OFFLINE"] = "1"
 
