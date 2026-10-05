@@ -1,5 +1,5 @@
-import logging
 import config
+import logging
 from openai import OpenAI
 from agent.prompt import ANSWER_PROMPT
 import json
@@ -40,7 +40,7 @@ def answer(query,history,doc = ''):
     messages = [
         {"role": "system", "content": ANSWER_PROMPT}
     ]
-    working = history.copy()
+    working = history[-20:]
     if doc:
         working.append({"role": "user", "content": doc})
     messages.extend(working)

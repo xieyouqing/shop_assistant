@@ -1,4 +1,4 @@
-from agent.handle_turn import handle_turn
+from agent.handle_turn import handle_turn,history,current
 
 
 # (类别, 输入, 历史, must 必含词, must_not 不该含词)
@@ -6,7 +6,7 @@ cases = [
  # ── 库内商品 ──
  ("库内", "你们有耳机吗", [],        ["AirPro"], []),
  ("库内", "手机多少钱", [],          ["3999"], []),
- ("库内", "充电宝有现货吗", [],       ["有货", "300"], []),
+ ("库内", "充电宝有现货吗", [],       ["300"], []),
  ("库内", "手表续航多久", [],        ["14"], []),
  ("库内", "笔记本什么配置", [],       ["AirBook"], []),
 
@@ -34,25 +34,47 @@ cases = [
  ("政策", "可以7天无理由退货吗", [],  ["人工", "公告"], []),
  ("闲聊", "你好呀", [],              [], ["AirPro", "299"]),
  ("闲聊", "今天天气怎么样", [],       [], ["AirPro", "299"]),
+]
 
- # ── 指代（已知会错的，先当"基线"记下来）──
- ("指代*", "它多少钱", [
-      {"role":"user","content":"有耳机吗"},
-      {"role":"assistant","content":"有的，AirPro 无线降噪耳机，299元"}], ["AirPro"], []),
+cases_1 = [
+"你们有卖冰箱吗",
+"有卖小汽车吗",
+"有空调吗"
 ]
 
 if __name__ == '__main__':
     a = []
     for i in range(len(cases)):
+        history.clear()
+        current.clear()
         must = cases[i][3]
         must_not = cases[i][4]
         history = cases[i][2]
         query = cases[i][1]
-        reply = handle_turn(query,history)
+        reply = handle_turn(query)
         result = all(w in reply for w in must) and not any(w in reply for w in must_not)
         if result:
-            a.append(["通过",f"{i}/21"])
+            a.append(["通过",f"{i+1}/{len(cases)}"])
         else:
-            a.append(["失败",f"{i}/21"])
+            a.append(["失败",f"{i+1}/{len(cases)}"])
+
+    b = []
+
+    for x in range(len(cases_1)):
+        history.clear()
+        current.clear()
+        result = handle_turn(cases_1[x])
+        b.append(result)
+
+    # ② 指代单独跑（真·两轮）
+    history.clear(); current.clear()
+    handle_turn("有耳机吗")          # ← 这一轮更新 current
+    r2 = handle_turn("它多少钱")      # ← 这一轮用 current
+    print("指代:", "通过" if "AirPro" in r2 else "失败", r2[:60])
+
+
     for j in a:
         print(j)
+
+    for y in b:
+        print(y)

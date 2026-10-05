@@ -2,7 +2,7 @@ import config
 from openai import OpenAI
 import logging
 import json
-from agent.prompt import QUERY_PROMPT,ROUTER_PROMPT
+from agent.prompt import ROUTER_PROMPT
 
 
 logger = logging.getLogger(__name__)
@@ -33,20 +33,6 @@ tools = [
     }
 ]
 
-rewrite_tools = [{
-    "type": "function",
-    "function": {
-        "name": "rewrite_query",
-        "description": "把指代性查询改写为自包含查询",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "query": {"type": "string", "description": "改写后的查询"}
-            },
-            "required": ["query"]
-        }
-    }
-}]
 
 def router(query):
     messages = [
