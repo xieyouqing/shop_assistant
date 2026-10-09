@@ -1,14 +1,9 @@
 import config
 import logging
-from openai import OpenAI
 from agent.prompt import ANSWER_PROMPT
+from agent.llm import call_llm
 import json
 
-
-client = OpenAI(
-    api_key=config.DEEPSEEK_API_KEY,
-    base_url=config.DEEPSEEK_BASE_URL
-)
 
 logger = logging.getLogger(__name__)
 
@@ -46,12 +41,7 @@ def answer(query,history,doc = ''):
     messages.extend(working)
     logger.info("开始生成回复")
     messages.append({"role":"user","content":query})
-    responses = client.chat.completions.create(
-        model=config.DEEPSEEK_MODEL,
-        messages=messages,
-        tools=answer_tool,
-        tool_choice={"type": "function", "function": {"name": "current_shop"}}
-    )
+    responses = call_llm(messages,answer_tool,{"type": "function", "function": {"name": "current_shop"}})
     tool_call = responses.choices[0].message.tool_calls[0]
     arguments = json.loads(tool_call.function.arguments)
     logger.info("生成回复内容为：%s ， 当前匹配商品为：%s",arguments["answer"],arguments["current"])

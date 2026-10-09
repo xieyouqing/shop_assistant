@@ -1,16 +1,11 @@
 import config
-from openai import OpenAI
 import logging
 import json
 from agent.prompt import ROUTER_PROMPT
+from agent.llm import call_llm
 
 
 logger = logging.getLogger(__name__)
-
-client = OpenAI(
-    api_key= config.DEEPSEEK_API_KEY,
-    base_url= config.DEEPSEEK_BASE_URL
-)
 
 tools = [
 {
@@ -41,12 +36,7 @@ def router(query):
     ]
     try:
         logger.info("开始意图识别")
-        resp = client.chat.completions.create(
-            model= config.DEEPSEEK_MODEL,
-            messages=messages,
-            tools=tools,
-            tool_choice={"type": "function","function":{"name":"route_to"}},
-        )
+        resp = call_llm(messages,tools,{"type": "function","function":{"name":"route_to"}})
         tool_call = resp.choices[0].message.tool_calls[0]
         arguments = json.loads(tool_call.function.arguments)
         logger.info("意图识别成功,识别结果,route:%s,has_pronoun:%s",arguments["route"],arguments["has_pronoun"])
