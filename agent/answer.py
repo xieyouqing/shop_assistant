@@ -41,7 +41,7 @@ def answer(query,history,doc = ''):
     messages.extend(working)
     logger.info("开始生成回复")
     messages.append({"role":"user","content":query})
-    responses = call_llm(messages,answer_tool,{"type": "function", "function": {"name": "current_shop"}})
+    responses = call_llm(messages,answer_tool,{"type": "function", "function": {"name": "current_shop"}},tag="answer")
     tool_call = responses.choices[0].message.tool_calls[0]
     arguments = json.loads(tool_call.function.arguments)
     logger.info("生成回复内容为：%s ， 当前匹配商品为：%s",arguments["answer"],arguments["current"])

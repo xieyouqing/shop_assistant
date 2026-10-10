@@ -36,7 +36,7 @@ def router(query):
     ]
     try:
         logger.info("开始意图识别")
-        resp = call_llm(messages,tools,{"type": "function","function":{"name":"route_to"}})
+        resp = call_llm(messages,tools,{"type": "function","function":{"name":"route_to"}},tag="router")
         tool_call = resp.choices[0].message.tool_calls[0]
         arguments = json.loads(tool_call.function.arguments)
         logger.info("意图识别成功,识别结果,route:%s,has_pronoun:%s",arguments["route"],arguments["has_pronoun"])

@@ -43,38 +43,44 @@ cases_1 = [
 ]
 
 if __name__ == '__main__':
-    a = []
-    for i in range(len(cases)):
-        history.clear()
-        current.clear()
-        must = cases[i][3]
-        must_not = cases[i][4]
-        history = cases[i][2]
-        query = cases[i][1]
-        reply = handle_turn(query)
-        result = all(w in reply for w in must) and not any(w in reply for w in must_not)
-        if result:
-            a.append(["通过",f"{i+1}/{len(cases)}"])
-        else:
-            a.append(["失败",f"{i+1}/{len(cases)}"])
+    # a = []
+    # for i in range(len(cases)):
+    #     history.clear()
+    #     current.clear()
+    #     must = cases[i][3]
+    #     must_not = cases[i][4]
+    #     history = cases[i][2]
+    #     query = cases[i][1]
+    #     reply = handle_turn(query)
+    #     result = all(w in reply for w in must) and not any(w in reply for w in must_not)
+    #     if result:
+    #         a.append(["通过",f"{i+1}/{len(cases)}"])
+    #     else:
+    #         a.append(["失败",f"{i+1}/{len(cases)}"])
+    #
+    # b = []
+    #
+    # for x in range(len(cases_1)):
+    #     history.clear()
+    #     current.clear()
+    #     result = handle_turn(cases_1[x])
+    #     b.append(result)
+    #
+    # # ② 指代单独跑（真·两轮）
+    # history.clear(); current.clear()
+    # handle_turn("有耳机吗")          # ← 这一轮更新 current
+    # r2 = handle_turn("它多少钱")      # ← 这一轮用 current
+    # print("指代:", "通过" if "AirPro" in r2 else "失败", r2[:60])
+    #
+    #
+    # for j in a:
+    #     print(j)
+    #
+    # for y in b:
+    #     print(y)
 
-    b = []
 
-    for x in range(len(cases_1)):
-        history.clear()
-        current.clear()
-        result = handle_turn(cases_1[x])
-        b.append(result)
-
-    # ② 指代单独跑（真·两轮）
-    history.clear(); current.clear()
-    handle_turn("有耳机吗")          # ← 这一轮更新 current
-    r2 = handle_turn("它多少钱")      # ← 这一轮用 current
-    print("指代:", "通过" if "AirPro" in r2 else "失败", r2[:60])
-
-
-    for j in a:
-        print(j)
-
-    for y in b:
-        print(y)
+    for y in range(5):
+        for y1 in range(len(cases)):
+            query = cases[y1][1]
+            handle_turn(query)
