@@ -1,0 +1,742 @@
+{
+  "products": [
+    {
+      "id": "P001",
+      "name": "AirPro 无线降噪耳机",
+      "category": "耳机",
+      "price": 299.0,
+      "stock": 120,
+      "specs": {
+        "蓝牙": "5.3",
+        "续航": "40小时",
+        "防水": "IPX5",
+        "降噪": "主动降噪-45dB"
+      },
+      "selling_points": ["40小时长续航", "入耳检测", "IPX5防水"],
+      "description": "适合通勤和运动的主动降噪蓝牙耳机，续航持久",
+      "image_url": null
+    },
+    {
+      "id": "P002",
+      "name": "星耀 X5 手机",
+      "category": "手机",
+      "price": 3999.0,
+      "stock": 80,
+      "specs": {
+        "屏幕": "6.7英寸 OLED",
+        "内存存储": "12GB+256GB",
+        "电池": "5000mAh",
+        "摄像头": "5000万像素主摄",
+        "处理器": "骁龙8 Gen 2"
+      },
+      "selling_points": ["5000万像素影像", "120Hz高刷屏", "65W快充"],
+      "description": "旗舰性能手机，主打影像和续航，适合游戏与拍照用户",
+      "image_url": null
+    },
+    {
+      "id": "P003",
+      "name": "AirBook 14 轻薄本",
+      "category": "笔记本",
+      "price": 4999.0,
+      "stock": 35,
+      "specs": {
+        "处理器": "酷睿i5-13500H",
+        "内存": "16GB DDR5",
+        "硬盘": "512GB SSD",
+        "屏幕": "14英寸 2.8K",
+        "重量": "1.3kg"
+      },
+      "selling_points": ["1.3kg轻薄机身", "2.8K高分屏", "16小时续航"],
+      "description": "适合办公和学习的轻薄本，重量轻、屏幕素质高",
+      "image_url": null
+    },
+    {
+      "id": "P004",
+      "name": "FitWatch S2 智能手表",
+      "category": "智能手表",
+      "price": 1299.0,
+      "stock": 200,
+      "specs": {
+        "屏幕": "1.43英寸 AMOLED",
+        "续航": "14天",
+        "防水": "5ATM",
+        "健康监测": "心率/血氧/睡眠"
+      },
+      "selling_points": ["14天超长续航", "5ATM防水", "血氧心率监测"],
+      "description": "长续航智能手表，支持健康监测与运动记录",
+      "image_url": null
+    },
+    {
+      "id": "P005",
+      "name": "快充充电宝 20000mAh",
+      "category": "充电宝",
+      "price": 169.0,
+      "stock": 300,
+      "specs": {
+        "容量": "20000mAh",
+        "快充": "22.5W",
+        "接口": "Type-C + USB-A双口",
+        "重量": "350g"
+      },
+      "selling_points": ["20000mAh大容量", "22.5W快充", "双口输出"],
+      "description": "大容量快充充电宝，出差旅行必备，可上飞机",
+      "image_url": null
+    },
+    {
+      "id": "P006",
+      "name": "AirPro 2 无线降噪耳机",
+      "category": "耳机",
+      "price": 399.0,
+      "stock": 150,
+      "specs": {
+        "蓝牙": "5.4",
+        "续航": "45小时",
+        "防水": "IPX6",
+        "降噪": "主动降噪-50dB"
+      },
+      "selling_points": ["50dB深度降噪", "45小时续航", "双设备连接"],
+      "description": "AirPro 系列升级款，降噪更深、连接更稳，适合地铁通勤",
+      "image_url": null
+    },
+    {
+      "id": "P007",
+      "name": "SoundBuds Lite 半入耳耳机",
+      "category": "耳机",
+      "price": 129.0,
+      "stock": 400,
+      "specs": {
+        "蓝牙": "5.3",
+        "续航": "24小时",
+        "防水": "IPX4",
+        "降噪": "无主动降噪"
+      },
+      "selling_points": ["半入耳佩戴舒适", "轻至3.8g", "低延迟游戏模式"],
+      "description": "百元价位半入耳蓝牙耳机，久戴不涨耳，适合日常听歌",
+      "image_url": null
+    },
+    {
+      "id": "P008",
+      "name": "BassCore 运动耳机",
+      "category": "耳机",
+      "price": 199.0,
+      "stock": 180,
+      "specs": {
+        "蓝牙": "5.3",
+        "续航": "12小时",
+        "防水": "IPX7",
+        "佩戴": "挂耳式"
+      },
+      "selling_points": ["IPX7可冲洗", "挂耳狂甩不掉", "重低音调音"],
+      "description": "跑步健身专用挂耳式耳机，出汗淋雨都不怕",
+      "image_url": null
+    },
+    {
+      "id": "P009",
+      "name": "StudioMax 头戴耳机",
+      "category": "耳机",
+      "price": 899.0,
+      "stock": 60,
+      "specs": {
+        "蓝牙": "5.2",
+        "续航": "60小时",
+        "防水": "不支持防水",
+        "降噪": "主动降噪-40dB"
+      },
+      "selling_points": ["60小时续航", "40mm大动圈", "可折叠收纳"],
+      "description": "头戴式主动降噪耳机，声场宽，适合长途飞行与办公",
+      "image_url": null
+    },
+    {
+      "id": "P010",
+      "name": "AirPro Kids 儿童耳机",
+      "category": "耳机",
+      "price": 159.0,
+      "stock": 220,
+      "specs": {
+        "蓝牙": "5.3",
+        "续航": "20小时",
+        "防水": "IPX4",
+        "音量限制": "85dB"
+      },
+      "selling_points": ["85dB护耳限音", "食品级硅胶耳帽", "防丢挂绳"],
+      "description": "儿童专用限音耳机，保护听力，适合网课与听故事",
+      "image_url": null
+    },
+    {
+      "id": "P011",
+      "name": "ClearVoice 通话耳机",
+      "category": "耳机",
+      "price": 89.0,
+      "stock": 500,
+      "specs": {
+        "蓝牙": "5.2",
+        "续航": "8小时",
+        "佩戴": "单耳挂耳",
+        "麦克风": "双麦降噪"
+      },
+      "selling_points": ["双麦通话降噪", "单耳轻便", "支持双手机连接"],
+      "description": "商务单耳蓝牙耳机，主打通话清晰，适合开车和办公",
+      "image_url": null
+    },
+    {
+      "id": "P012",
+      "name": "HiRes 有线耳机",
+      "category": "耳机",
+      "price": 69.0,
+      "stock": 350,
+      "specs": {
+        "接口": "3.5mm",
+        "续航": "无需供电",
+        "防水": "不支持防水",
+        "线控": "带麦克风线控"
+      },
+      "selling_points": ["Hi-Res 认证", "零延迟", "免充电"],
+      "description": "3.5mm 有线入耳耳机，音质稳定无延迟，适合剪辑和游戏",
+      "image_url": null
+    },
+    {
+      "id": "P013",
+      "name": "NoiseZero Pro 降噪耳机",
+      "category": "耳机",
+      "price": 599.0,
+      "stock": 90,
+      "specs": {
+        "蓝牙": "5.3",
+        "续航": "38小时",
+        "防水": "IPX5",
+        "降噪": "主动降噪-48dB"
+      },
+      "selling_points": ["48dB自适应降噪", "LDAC高清音频", "无线充电盒"],
+      "description": "高解析主动降噪耳机，降噪与音质兼顾，适合差旅人群",
+      "image_url": null
+    },
+    {
+      "id": "P014",
+      "name": "星耀 X5 Pro 手机",
+      "category": "手机",
+      "price": 5299.0,
+      "stock": 45,
+      "specs": {
+        "屏幕": "6.8英寸 2K LTPO",
+        "内存存储": "16GB+512GB",
+        "电池": "5400mAh",
+        "摄像头": "一英寸大底主摄",
+        "处理器": "骁龙8 Gen 3"
+      },
+      "selling_points": ["一英寸大底", "2K LTPO屏", "100W快充"],
+      "description": "星耀系列顶配旗舰，影像和性能都是当前第一梯队",
+      "image_url": null
+    },
+    {
+      "id": "P015",
+      "name": "星耀 A3 手机",
+      "category": "手机",
+      "price": 1499.0,
+      "stock": 160,
+      "specs": {
+        "屏幕": "6.5英寸 LCD",
+        "内存存储": "8GB+128GB",
+        "电池": "5000mAh",
+        "摄像头": "4800万像素双摄",
+        "处理器": "天玑7200"
+      },
+      "selling_points": ["1500元档性价比", "5000mAh大电池", "33W快充"],
+      "description": "中端入门机型，性能够用、续航扎实，适合学生党",
+      "image_url": null
+    },
+    {
+      "id": "P016",
+      "name": "星耀 Note 12 手机",
+      "category": "手机",
+      "price": 1099.0,
+      "stock": 210,
+      "specs": {
+        "屏幕": "6.9英寸 LCD",
+        "内存存储": "8GB+256GB",
+        "电池": "6000mAh",
+        "摄像头": "5000万像素主摄",
+        "处理器": "骁龙6 Gen 1"
+      },
+      "selling_points": ["6000mAh超大电池", "6.9英寸大屏", "反向充电"],
+      "description": "大屏大电池长续航机型，看视频刷剧一整天不用充电",
+      "image_url": null
+    },
+    {
+      "id": "P017",
+      "name": "极光 Z1 手机",
+      "category": "手机",
+      "price": 999.0,
+      "stock": 260,
+      "specs": {
+        "屏幕": "6.5英寸 LCD",
+        "内存存储": "8GB+128GB",
+        "电池": "5000mAh",
+        "摄像头": "1300万像素双摄",
+        "处理器": "骁龙4 Gen 2"
+      },
+      "selling_points": ["千元以内", "轻薄机身", "大音量外放"],
+      "description": "千元以内入门机，日常通讯够用，适合老人和备用机",
+      "image_url": null
+    },
+    {
+      "id": "P018",
+      "name": "星耀 X5 Lite 手机",
+      "category": "手机",
+      "price": 2699.0,
+      "stock": 130,
+      "specs": {
+        "屏幕": "6.7英寸 OLED",
+        "内存存储": "12GB+256GB",
+        "电池": "5000mAh",
+        "摄像头": "5000万像素主摄",
+        "处理器": "骁龙7+ Gen 2"
+      },
+      "selling_points": ["旗舰同款屏幕", "轻薄手感", "67W快充"],
+      "description": "X5 系列的轻旗舰版本，屏幕和快充保留，价格更友好",
+      "image_url": null
+    },
+    {
+      "id": "P019",
+      "name": "极光 Fold 折叠屏手机",
+      "category": "手机",
+      "price": 8999.0,
+      "stock": 18,
+      "specs": {
+        "屏幕": "7.9英寸内屏 + 6.4英寸外屏",
+        "内存存储": "16GB+1TB",
+        "电池": "4800mAh",
+        "摄像头": "5000万像素三摄",
+        "处理器": "骁龙8 Gen 3"
+      },
+      "selling_points": ["展开7.9英寸", "水滴铰链", "多任务分屏"],
+      "description": "横向折叠屏旗舰，展开当小平板用，适合办公人群",
+      "image_url": null
+    },
+    {
+      "id": "P020",
+      "name": "星耀 青春版手机",
+      "category": "手机",
+      "price": 799.0,
+      "stock": 380,
+      "specs": {
+        "屏幕": "6.4英寸 LCD",
+        "内存存储": "6GB+128GB",
+        "电池": "4800mAh",
+        "摄像头": "1300万像素主摄",
+        "处理器": "骁龙4 Gen 1"
+      },
+      "selling_points": ["价格最低", "轻至168g", "保留3.5mm耳机孔"],
+      "description": "星耀系列最便宜的机型，满足打电话和微信等基础需求",
+      "image_url": null
+    },
+    {
+      "id": "P021",
+      "name": "极光 Max 手机",
+      "category": "手机",
+      "price": 6999.0,
+      "stock": 25,
+      "specs": {
+        "屏幕": "7.2英寸 OLED",
+        "内存存储": "12GB+512GB",
+        "电池": "5800mAh",
+        "摄像头": "潜望长焦五摄",
+        "处理器": "骁龙8 Gen 3"
+      },
+      "selling_points": ["7.2英寸巨屏", "潜望长焦", "支持手写笔"],
+      "description": "7 英寸级巨屏旗舰，追剧和拍照长焦都强，主打影音体验",
+      "image_url": null
+    },
+    {
+      "id": "P022",
+      "name": "FitWatch S2 Pro 智能手表",
+      "category": "智能手表",
+      "price": 1899.0,
+      "stock": 110,
+      "specs": {
+        "屏幕": "1.5英寸 AMOLED",
+        "续航": "21天",
+        "防水": "5ATM",
+        "健康监测": "心率/血氧/睡眠/ECG心电"
+      },
+      "selling_points": ["ECG心电分析", "21天续航", "双频GPS"],
+      "description": "FitWatch 旗舰款，多了心电和双频定位，适合运动和健康管理",
+      "image_url": null
+    },
+    {
+      "id": "P023",
+      "name": "FitBand 3 智能手环",
+      "category": "智能手环",
+      "price": 249.0,
+      "stock": 450,
+      "specs": {
+        "屏幕": "1.62英寸 AMOLED",
+        "续航": "14天",
+        "防水": "5ATM",
+        "健康监测": "心率/睡眠"
+      },
+      "selling_points": ["两百元档手环", "14天续航", "磁吸充电"],
+      "description": "入门智能手环，记步、看心率、收消息都够用",
+      "image_url": null
+    },
+    {
+      "id": "P024",
+      "name": "FitWatch Kids 儿童手表",
+      "category": "智能手表",
+      "price": 599.0,
+      "stock": 190,
+      "specs": {
+        "屏幕": "1.4英寸 TFT",
+        "续航": "5天",
+        "定位": "GPS+基站+WiFi",
+        "通讯": "4G全网通"
+      },
+      "selling_points": ["九重定位", "双向视频通话", "上课禁用"],
+      "description": "儿童定位电话手表，家长可实时查看位置，支持一键呼叫",
+      "image_url": null
+    },
+    {
+      "id": "P025",
+      "name": "FitWatch SE 智能手表",
+      "category": "智能手表",
+      "price": 699.0,
+      "stock": 240,
+      "specs": {
+        "屏幕": "1.4英寸 AMOLED",
+        "续航": "10天",
+        "防水": "IP68",
+        "健康监测": "心率/血氧"
+      },
+      "selling_points": ["七百元档手表", "方屏设计", "100+运动模式"],
+      "description": "价格友好的方形智能手表，功能覆盖日常所需",
+      "image_url": null
+    },
+    {
+      "id": "P026",
+      "name": "RunGear 跑步手表",
+      "category": "智能手表",
+      "price": 1599.0,
+      "stock": 70,
+      "specs": {
+        "屏幕": "1.39英寸 MIP半反半透",
+        "续航": "30天",
+        "防水": "10ATM",
+        "定位": "双频五星GPS"
+      },
+      "selling_points": ["30天续航", "10ATM可游泳", "越野轨迹导航"],
+      "description": "专业跑步与越野手表，阳光下半反半透屏清晰可见",
+      "image_url": null
+    },
+    {
+      "id": "P027",
+      "name": "FitWatch S2 Lite 智能手表",
+      "category": "智能手表",
+      "price": 899.0,
+      "stock": 170,
+      "specs": {
+        "屏幕": "1.43英寸 AMOLED",
+        "续航": "12天",
+        "防水": "5ATM",
+        "健康监测": "心率/血氧/睡眠"
+      },
+      "selling_points": ["S2同款屏幕", "12天续航", "轻至32g"],
+      "description": "S2 系列的入门版本，屏幕和防水保持一致，价格更低",
+      "image_url": null
+    },
+    {
+      "id": "P028",
+      "name": "康护 W1 健康手表",
+      "category": "智能手表",
+      "price": 2299.0,
+      "stock": 40,
+      "specs": {
+        "屏幕": "1.6英寸 AMOLED",
+        "续航": "18天",
+        "防水": "5ATM",
+        "健康监测": "血压趋势/血氧/心率/睡眠呼吸"
+      },
+      "selling_points": ["血压趋势监测", "睡眠呼吸暂停筛查", "一键SOS"],
+      "description": "面向中老年健康管理的手表，主打血压趋势和睡眠监测",
+      "image_url": null
+    },
+    {
+      "id": "P029",
+      "name": "FitBand 3 Pro 智能手环",
+      "category": "智能手环",
+      "price": 399.0,
+      "stock": 320,
+      "specs": {
+        "屏幕": "1.74英寸 AMOLED",
+        "续航": "18天",
+        "防水": "5ATM",
+        "健康监测": "心率/血氧/睡眠/压力"
+      },
+      "selling_points": ["1.74英寸大屏", "18天续航", "内置GPS"],
+      "description": "大屏高阶手环，带独立 GPS，跑步可以不带手机",
+      "image_url": null
+    },
+    {
+      "id": "P030",
+      "name": "AirBook 16 轻薄本",
+      "category": "笔记本",
+      "price": 6299.0,
+      "stock": 28,
+      "specs": {
+        "处理器": "酷睿Ultra5 125H",
+        "内存": "16GB LPDDR5",
+        "硬盘": "1TB SSD",
+        "屏幕": "16英寸 2.5K 120Hz",
+        "重量": "1.7kg"
+      },
+      "selling_points": ["16英寸大屏", "Ultra5处理器", "1TB大硬盘"],
+      "description": "大屏轻薄本，屏幕和硬盘都给足，适合长时间办公",
+      "image_url": null
+    },
+    {
+      "id": "P031",
+      "name": "GameForce 15 游戏本",
+      "category": "笔记本",
+      "price": 7999.0,
+      "stock": 22,
+      "specs": {
+        "处理器": "酷睿i7-13650HX",
+        "内存": "16GB DDR5",
+        "硬盘": "1TB SSD",
+        "显卡": "RTX 4060 8G",
+        "屏幕": "15.6英寸 2.5K 165Hz"
+      },
+      "selling_points": ["RTX4060独显", "165Hz电竞屏", "双风扇五热管"],
+      "description": "主流游戏本，3A 大作中高画质流畅，兼顾学习和渲染",
+      "image_url": null
+    },
+    {
+      "id": "P032",
+      "name": "AirBook Pro 14 轻薄本",
+      "category": "笔记本",
+      "price": 8999.0,
+      "stock": 15,
+      "specs": {
+        "处理器": "酷睿Ultra7 155H",
+        "内存": "32GB LPDDR5",
+        "硬盘": "1TB SSD",
+        "屏幕": "14.5英寸 3K 120Hz OLED",
+        "重量": "1.4kg"
+      },
+      "selling_points": ["3K OLED屏", "32GB大内存", "雷电4接口"],
+      "description": "高端轻薄本，OLED 屏幕色彩准，适合设计和开发",
+      "image_url": null
+    },
+    {
+      "id": "P033",
+      "name": "StudyBook 13 学生本",
+      "category": "笔记本",
+      "price": 3299.0,
+      "stock": 55,
+      "specs": {
+        "处理器": "酷睿i5-1235U",
+        "内存": "16GB DDR4",
+        "硬盘": "512GB SSD",
+        "屏幕": "13.3英寸 1080P",
+        "重量": "1.2kg"
+      },
+      "selling_points": ["三千元档", "1.2kg便携", "10小时续航"],
+      "description": "学生网课办公本，价格友好、轻便好带，性能够日常使用",
+      "image_url": null
+    },
+    {
+      "id": "P034",
+      "name": "GameForce 17 游戏本",
+      "category": "笔记本",
+      "price": 11999.0,
+      "stock": 8,
+      "specs": {
+        "处理器": "酷睿i9-14900HX",
+        "内存": "32GB DDR5",
+        "硬盘": "2TB SSD",
+        "显卡": "RTX 4070 8G",
+        "屏幕": "17.3英寸 2.5K 240Hz"
+      },
+      "selling_points": ["RTX4070", "240Hz电竞屏", "i9旗舰处理器"],
+      "description": "高配游戏本，顶配处理器加独显，剪辑和游戏都压得住",
+      "image_url": null
+    },
+    {
+      "id": "P035",
+      "name": "AirBook Air 13 轻薄本",
+      "category": "笔记本",
+      "price": 5599.0,
+      "stock": 42,
+      "specs": {
+        "处理器": "酷睿Ultra5 125U",
+        "内存": "16GB LPDDR5",
+        "硬盘": "512GB SSD",
+        "屏幕": "13.6英寸 2.5K",
+        "重量": "1.0kg"
+      },
+      "selling_points": ["仅1.0kg", "无风扇静音", "15小时续航"],
+      "description": "极致轻薄的出差本，一公斤出头，放包里几乎没感觉",
+      "image_url": null
+    },
+    {
+      "id": "P036",
+      "name": "OfficeBook 15 商务本",
+      "category": "笔记本",
+      "price": 4299.0,
+      "stock": 65,
+      "specs": {
+        "处理器": "锐龙5 7530U",
+        "内存": "16GB DDR4",
+        "硬盘": "512GB SSD",
+        "屏幕": "15.6英寸 1080P",
+        "重量": "1.6kg"
+      },
+      "selling_points": ["指纹+人脸双解锁", "防泼溅键盘", "RJ45网口"],
+      "description": "标准商务本，接口齐全，适合行政和财务日常办公",
+      "image_url": null
+    },
+    {
+      "id": "P037",
+      "name": "CreatorX 16 创作本",
+      "category": "笔记本",
+      "price": 10999.0,
+      "stock": 12,
+      "specs": {
+        "处理器": "锐龙9 8945HS",
+        "内存": "32GB DDR5",
+        "硬盘": "2TB SSD",
+        "显卡": "RTX 4060 8G",
+        "屏幕": "16英寸 4K OLED 触控"
+      },
+      "selling_points": ["4K OLED触控屏", "100% DCI-P3", "创作者认证"],
+      "description": "面向视频剪辑和平面设计的创作本，屏幕色准是主要卖点",
+      "image_url": null
+    },
+    {
+      "id": "P038",
+      "name": "磁吸充电宝 10000mAh",
+      "category": "充电宝",
+      "price": 129.0,
+      "stock": 280,
+      "specs": {
+        "容量": "10000mAh",
+        "快充": "20W有线 + 15W无线",
+        "接口": "Type-C",
+        "重量": "210g"
+      },
+      "selling_points": ["磁吸免线", "15W无线充", "可上飞机"],
+      "description": "磁吸无线充电宝，吸在手机背面边走边充，适合逛街出行",
+      "image_url": null
+    },
+    {
+      "id": "P039",
+      "name": "快充充电宝 10000mAh",
+      "category": "充电宝",
+      "price": 99.0,
+      "stock": 420,
+      "specs": {
+        "容量": "10000mAh",
+        "快充": "22.5W",
+        "接口": "Type-C + USB-A双口",
+        "重量": "220g"
+      },
+      "selling_points": ["百元以内", "22.5W快充", "轻薄易带"],
+      "description": "一万毫安时便携充电宝，日常通勤一天够用，可上飞机",
+      "image_url": null
+    },
+    {
+      "id": "P040",
+      "name": "氮化镓充电宝 25000mAh",
+      "category": "充电宝",
+      "price": 299.0,
+      "stock": 140,
+      "specs": {
+        "容量": "25000mAh",
+        "快充": "65W PD",
+        "接口": "双Type-C + USB-A",
+        "重量": "520g"
+      },
+      "selling_points": ["65W可充笔记本", "氮化镓小体积", "数显电量"],
+      "description": "大功率充电宝，能给轻薄本供电，出差带一个就够",
+      "image_url": null
+    },
+    {
+      "id": "P041",
+      "name": "迷你充电宝 5000mAh",
+      "category": "充电宝",
+      "price": 59.0,
+      "stock": 600,
+      "specs": {
+        "容量": "5000mAh",
+        "快充": "10W",
+        "接口": "Type-C",
+        "重量": "105g"
+      },
+      "selling_points": ["口红大小", "105g超轻", "自带挂绳"],
+      "description": "口袋级迷你充电宝，应急补一次电，出门几乎不占地方",
+      "image_url": null
+    },
+    {
+      "id": "P042",
+      "name": "户外电源 50000mAh",
+      "category": "充电宝",
+      "price": 599.0,
+      "stock": 35,
+      "specs": {
+        "容量": "50000mAh",
+        "输出": "220V AC + 100W PD",
+        "接口": "AC + Type-C + USB-A + 车充",
+        "重量": "1.8kg"
+      },
+      "selling_points": ["220V交流输出", "露营应急", "带LED照明灯"],
+      "description": "户外应急电源，能带动小电器，适合露营和停电备用",
+      "image_url": null
+    },
+    {
+      "id": "P043",
+      "name": "自带线充电宝 20000mAh",
+      "category": "充电宝",
+      "price": 199.0,
+      "stock": 190,
+      "specs": {
+        "容量": "20000mAh",
+        "快充": "22.5W",
+        "接口": "自带Type-C线 + 双口",
+        "重量": "380g"
+      },
+      "selling_points": ["自带线免带数据线", "22.5W快充", "可上飞机"],
+      "description": "自带充电线的两万毫安时充电宝，出门不用再找线",
+      "image_url": null
+    },
+    {
+      "id": "P044",
+      "name": "快充充电宝 30000mAh",
+      "category": "充电宝",
+      "price": 259.0,
+      "stock": 95,
+      "specs": {
+        "容量": "30000mAh",
+        "快充": "22.5W",
+        "接口": "双Type-C + USB-A",
+        "重量": "620g"
+      },
+      "selling_points": ["30000mAh超大容量", "三设备同时充", "数显电量"],
+      "description": "三万毫安时大容量充电宝，长途出行和多人共用都够",
+      "image_url": null
+    },
+    {
+      "id": "P045",
+      "name": "太阳能充电宝 20000mAh",
+      "category": "充电宝",
+      "price": 239.0,
+      "stock": 75,
+      "specs": {
+        "容量": "20000mAh",
+        "快充": "18W",
+        "接口": "Type-C + USB-A双口 + 太阳能板",
+        "重量": "410g"
+      },
+      "selling_points": ["太阳能应急补电", "三防外壳", "带登山挂扣"],
+      "description": "带太阳能板的户外充电宝，适合徒步露营等没电可充的场景",
+      "image_url": null
+    }
+  ]
+}

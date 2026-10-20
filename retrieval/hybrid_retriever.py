@@ -3,6 +3,8 @@ import config
 import logging
 from retrieval.bm25_retriever import BM25RetrieverEngine
 from retrieval.vector_retriever import VectorRetriever
+import re
+import unicodedata
 
 
 logger = logging.getLogger(__name__)
@@ -44,6 +46,19 @@ class HybridRetriever:
             logger.error("RRF融合失败，返回空，错误： %s", e)
             return []
 
+    def normalize(self,text):
+        """
+        返回 (归一化字符串 -> 原文下标 映射)
+        规则：NFKC(全角→半角/兼容字符) → 小写 → 简繁映射 → 去噪(非 \\w)
+        """
+        buf = []
+        for ch in text:
+            ch = unicodedata.normalize("NFKC", ch).lower()
+            for c in ch:  # NFKC 可能一变多
+                if re.match(r"\w", c, re.UNICODE):
+                    buf.append(c)
+        return "".join(buf)
+
     def search(self,query:str)-> list[Document]:
         bm25_results = self.bm25_retriever.search(query)
         vector_results = self.vector_retriever.search(query)
@@ -51,5 +66,25 @@ class HybridRetriever:
         if not results:
             logger.warning("RRF融合返回结果为空，混合检索返回空")
             return []
-        return results[:config.HYBRID_TOP_N]
+        docs = results
+        norm_query = self.normalize(query)
 
+        hits = []  # 装"命中了第几条 doc"
+        shop_name = docs[0].metadata["name"]
+        for idx, doc in enumerate(docs):
+            name = doc.metadata["name"]  # ① 怎么取名字
+            if self.normalize(name) in norm_query:  # ② 判断什么关系
+                hits.append(idx)
+
+        if len(hits) == 0:
+            logger.info([f"问题：{query},命中数{len(hits)},移动前第1位{shop_name},移动后第1位{docs[0]}"])
+            pass  # ③ 不动
+        elif len(hits) == 1:  # ④ 命中 1 个时怎么判
+            item = docs.pop(hits[0])  # ⑤ 把命中的那条取出来
+            docs.insert(0, item)
+            if hits[0] != 0:
+                logger.info([f"问题：{query},命中数{len(hits)},移动前第1位{shop_name},移动后第1位{docs[0]}"])
+        else:
+            logger.info([f"问题：{query},命中数{len(hits)},移动前第1位{shop_name},移动后第1位{docs[0]}"])
+            pass
+        return results[:config.HYBRID_TOP_N]

@@ -1,0 +1,86 @@
+{
+  "products": [
+    {
+      "id": "P001",
+      "name": "AirPro 无线降噪耳机",
+      "category": "耳机",
+      "price": 299.0,
+      "stock": 120,
+      "specs": {
+        "蓝牙": "5.3",
+        "续航": "40小时",
+        "防水": "IPX5",
+        "降噪": "主动降噪-45dB"
+      },
+      "selling_points": ["40小时长续航", "入耳检测", "IPX5防水"],
+      "description": "适合通勤和运动的主动降噪蓝牙耳机，续航持久",
+      "image_url": null
+    },
+    {
+      "id": "P002",
+      "name": "星耀 X5 手机",
+      "category": "手机",
+      "price": 3999.0,
+      "stock": 80,
+      "specs": {
+        "屏幕": "6.7英寸 OLED",
+        "内存存储": "12GB+256GB",
+        "电池": "5000mAh",
+        "摄像头": "5000万像素主摄",
+        "处理器": "骁龙8 Gen 2"
+      },
+      "selling_points": ["5000万像素影像", "120Hz高刷屏", "65W快充"],
+      "description": "旗舰性能手机，主打影像和续航，适合游戏与拍照用户",
+      "image_url": null
+    },
+    {
+      "id": "P003",
+      "name": "AirBook 14 轻薄本",
+      "category": "笔记本",
+      "price": 4999.0,
+      "stock": 35,
+      "specs": {
+        "处理器": "酷睿i5-13500H",
+        "内存": "16GB DDR5",
+        "硬盘": "512GB SSD",
+        "屏幕": "14英寸 2.8K",
+        "重量": "1.3kg"
+      },
+      "selling_points": ["1.3kg轻薄机身", "2.8K高分屏", "16小时续航"],
+      "description": "适合办公和学习的轻薄本，重量轻、屏幕素质高",
+      "image_url": null
+    },
+    {
+      "id": "P004",
+      "name": "FitWatch S2 智能手表",
+      "category": "智能手表",
+      "price": 1299.0,
+      "stock": 200,
+      "specs": {
+        "屏幕": "1.43英寸 AMOLED",
+        "续航": "14天",
+        "防水": "5ATM",
+        "健康监测": "心率/血氧/睡眠"
+      },
+      "selling_points": ["14天超长续航", "5ATM防水", "血氧心率监测"],
+      "description": "长续航智能手表，支持健康监测与运动记录",
+      "image_url": null
+    },
+    {
+      "id": "P005",
+      "name": "快充充电宝 20000mAh",
+      "category": "充电宝",
+      "price": 169.0,
+      "stock": 300,
+      "specs": {
+        "容量": "20000mAh",
+        "快充": "22.5W",
+        "接口": "Type-C + USB-A双口",
+        "重量": "350g"
+      },
+      "selling_points": ["20000mAh大容量", "22.5W快充", "双口输出"],
+      "description": "大容量快充充电宝，出差旅行必备，可上飞机",
+      "image_url": null
+    }
+  ]
+}
