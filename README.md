@@ -49,8 +49,10 @@ agent/handle_turn.py                 编排 + 整轮兜底
 ```
 shop_assistant/
 ├── config.py
-├── main.py
+├── main.py                      命令行入口
+├── api.py                       HTTP 接口（FastAPI）
 ├── requirements.txt
+├── requirements.lock            锁定依赖版本，用于服务器复现
 ├── .env.example
 ├── data/
 │   ├── products.json            商品库（45 SKU）
@@ -96,9 +98,23 @@ copy .env.example .env            # 填入 DEEPSEEK_API_KEY
 # 3. 建索引（首次 / 换库后）
 .\.venv\Scripts\python.exe -m indexing.build_index
 
-# 4. 启动
+# 4. 启动（命令行）
 .\.venv\Scripts\python.exe main.py
 ```
+
+## HTTP 接口
+
+```powershell
+.\.venv\Scripts\python.exe -m uvicorn api:app --host 0.0.0.0 --port 8000
+```
+
+| 接口 | 说明 |
+|---|---|
+| `POST /chat` | `{"query": "..."}` → `{"answer": "..."}` |
+| `GET /health` | 健康检查 |
+| `POST /reset` | 清空会话状态（单用户 demo：`history` / `current` 是进程内全局） |
+
+启动后可访问 `/docs` 使用自动生成的接口调试页。
 
 ## 评估
 
