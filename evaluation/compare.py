@@ -275,7 +275,9 @@ def main():
         print(f"\n=== 跑 {name}（{len(cases)} 条）===")
         rows, st = run_arm(name, factory(), cases)
         rows_by_arm[name], stats[name] = rows, st
-        p = os.path.join(OUT_DIR, f"result_{'baseline' if name == '纯RAG' else 'fused'}.json")
+        # 用 --id / --limit 时不覆盖全量结果，避免"跑一条就把证据冲掉"
+        suffix = f"_{a.id.replace(',', '-')}" if a.id else (f"_limit{a.limit}" if a.limit else "")
+        p = os.path.join(OUT_DIR, f"result_{'baseline' if name == '纯RAG' else 'fused'}{suffix}.json")
         with open(p, "w", encoding="utf-8") as f:
             json.dump({"统计": st, "明细": rows}, f, ensure_ascii=False, indent=2)
         print(f"  → {p}")
