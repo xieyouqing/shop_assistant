@@ -51,6 +51,8 @@ shop_assistant/
 ├── config.py
 ├── main.py                      命令行入口
 ├── api.py                       HTTP 接口（FastAPI）
+├── web/
+│   └── index.html               单页聊天界面（由 api.py 同源托管）
 ├── requirements.txt
 ├── requirements.lock            锁定依赖版本，用于服务器复现
 ├── .env.example
@@ -110,6 +112,7 @@ copy .env.example .env            # 填入 DEEPSEEK_API_KEY
 
 | 接口 | 说明 |
 |---|---|
+| `GET /` | 单页聊天界面（`web/index.html`） |
 | `POST /chat` | `{"query": "..."}` → `{"answer": "..."}` |
 | `GET /health` | 健康检查 |
 | `POST /reset` | 清空会话状态（单用户 demo：`history` / `current` 是进程内全局） |
