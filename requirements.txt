@@ -8,3 +8,5 @@ faiss-cpu>=1.7
 jieba>=0.42
 rank_bm25>=0.2
 sentence-transformers>=2.2
+fastapi>=0.156
+uvicorn>=0.54
