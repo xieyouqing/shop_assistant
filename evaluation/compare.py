@@ -30,6 +30,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from evaluation.cases import all_cases          # noqa: E402
 from evaluation.baseline_rag import BaselineRAG  # noqa: E402
 import agent.handle_turn as ht                   # noqa: E402
+from agent.handle_turn import HandleTurn         # noqa: E402
 
 
 # 单价（元 / 百万 token）—— 按你实际用的档位自己填，我不替你猜
@@ -63,6 +64,7 @@ _REC = {"检索词": "", "检索结果": ""}
 
 
 def make_fused():
+    session = HandleTurn()
     real_search = ht.search_product
 
     def recording_search(q):
@@ -75,11 +77,11 @@ def make_fused():
 
     def turn(q):
         _REC["检索词"] = _REC["检索结果"] = ""   # 闲聊分支不检索，不清就跟留上一轮的
-        return ht.handle_turn(q)
+        return session.handle_turn(q)
 
     def reset():
-        ht.history.clear()
-        ht.current.clear()
+        session.history.clear()
+        session.current = []
 
     return turn, reset, (lambda: (_REC["检索词"], _REC["检索结果"]))
 

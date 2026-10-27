@@ -7,30 +7,31 @@ from retrieval.product_search import search_product
 
 logger = logging.getLogger(__name__)
 
-history = []
+class HandleTurn:
+    def __init__(self):
+        self.history = []
+        self.current = []
 
-current = []
 
-def handle_turn(query):
-    global current
-    try:
-        route = router(query)
+    def handle_turn(self,query):
+        try:
+            route = router(query)
 
-        if route["route"]=="product":
-            q = " ".join(current) if (route["has_pronoun"] and current) else query
-            doc = search_product(q)
-            result = answer(query, history, doc)
-            current = result["current"]
-            history.append({"role": "user", "content": query})
-            history.append({"role": 'assistant', "content": result["answer"]})
+            if route["route"]=="product":
+                q = " ".join(self.current) if (route["has_pronoun"] and self.current) else query
+                doc = search_product(q)
+                result = answer(query, self.history, doc)
+                self.current = result["current"]
+                self.history.append({"role": "user", "content": query})
+                self.history.append({"role": 'assistant', "content": result["answer"]})
 
-        else:
-            result = answer(query,history)
-            history.append({"role":"user","content":query})
-            history.append({"role": 'assistant', "content": result["answer"]})
+            else:
+                result = answer(query,self.history)
+                self.history.append({"role":"user","content":query})
+                self.history.append({"role": 'assistant', "content": result["answer"]})
 
-        return result["answer"]
+            return result["answer"]
 
-    except Exception as e:
-        logger.error("生成回复失败 %s", e)
-        return "网络错误，请重新输入"
+        except Exception as e:
+            logger.error("生成回复失败 %s", e)
+            return "网络错误，请重新输入"
