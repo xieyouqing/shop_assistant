@@ -30,6 +30,10 @@ DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
 DEEPSEEK_BASE_URL = os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com")
 DEEPSEEK_MODEL = "deepseek-chat"
 
+# ========== 会话配置 ==========
+# 会话空闲超时 / cookie 有效期（秒）：SessionStore 与 set_cookie 共用这一个值
+SESSION_TTL = 1800
+
 #===== embedding配置 =====
 EMBEDDING_MODEL_NAME = "BAAI/bge-base-zh-v1.5"
 

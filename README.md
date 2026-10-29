@@ -115,7 +115,9 @@ copy .env.example .env            # 填入 DEEPSEEK_API_KEY
 | `GET /` | 单页聊天界面（`web/index.html`） |
 | `POST /chat` | `{"query": "..."}` → `{"answer": "..."}` |
 | `GET /health` | 健康检查 |
-| `POST /reset` | 清空会话状态（单用户 demo：`history` / `current` 是进程内全局） |
+| `POST /reset` | 清空当前会话（按 cookie 里的 `sid`） |
+
+**多会话**：每个浏览器一个会话。首次请求时服务端下发 `httponly` cookie（`sid`），会话存在进程内存，`config.SESSION_TTL`（默认 30 分钟）空闲过期；同一会话的请求串行执行，不同会话并行。
 
 启动后可访问 `/docs` 使用自动生成的接口调试页。
 

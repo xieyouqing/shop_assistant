@@ -9,7 +9,7 @@ from agent.handle_turn import HandleTurn
 logger = logging.getLogger(__name__)
 
 class SessionStore:
-    def __init__(self, ttl=1800):
+    def __init__(self, ttl=config.SESSION_TTL):
         self.ttl = ttl
         self._sessions = {}
         self._lock = threading.Lock()
