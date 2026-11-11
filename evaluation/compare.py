@@ -33,9 +33,13 @@ import agent.handle_turn as ht                   # noqa: E402
 from agent.handle_turn import HandleTurn         # noqa: E402
 
 
-# 单价（元 / 百万 token）—— 按你实际用的档位自己填，我不替你猜
-PRICE_IN = None
-PRICE_OUT = None
+# 单价（元 / 百万 token）—— DeepSeek 官方定价，deepseek-v4-flash
+# 来源：https://api-docs.deepseek.com/zh-cn/quick_start/pricing（2026-11-04 查）
+# 取值口径：输入按「缓存未命中·空闲时段」= 1.5，输出按「空闲时段」= 4.5。
+# 换成高峰时段（周一至周五 9-12、14-18）请改 3.0 / 9.0；结果会翻一倍，属保守上限。
+# 若多数输入命中缓存，输入单价可降至 0.05，实际成本更低。
+PRICE_IN = 1.5
+PRICE_OUT = 4.5
 
 OUT_DIR = os.path.dirname(os.path.abspath(__file__))
 
