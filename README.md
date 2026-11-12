@@ -4,15 +4,15 @@
 
 ## 技术栈
 
-Python 3.10 / DeepSeek / FAISS 向量检索 / BM25 + jieba 中文分词 / RRF 融合 / 工作流编排 / 哑工具（`tool_choice` 锁定输出）
+Python 3.10+ / DeepSeek / FAISS 向量检索 / BM25 + jieba 中文分词 / RRF 融合 / 工作流编排 / 哑工具（`tool_choice` 锁定输出）
 
 ## 架构
 
 ```
 用户输入
   │
-  ▼
-main.py
+  ├─ main.py（CLI）→ 默认 HandleTurn
+  └─ api.py（HTTP）→ Cookie(sid) → SessionStore → 每个 sid 一个 HandleTurn
   │
   ▼
 agent/handle_turn.py                 编排 + 整轮兜底
@@ -71,7 +71,8 @@ shop_assistant/
 ├── agent/
 │   ├── router.py                意图识别 + 指代判断（哑工具）
 │   ├── answer.py                生成回复 + 报告 current（哑工具）
-│   ├── handle_turn.py           编排 + 两层历史 + 兜底
+│   ├── handle_turn.py           编排 + 两层历史 + 每会话锁 + 兜底
+│   ├── session_store.py         多会话管理（dict + 锁 + 滑动 TTL）
 │   ├── llm.py                   公共调用（重试 + 用量日志）
 │   └── prompt.py
 ├── evaluation/
@@ -82,7 +83,8 @@ shop_assistant/
 ├── tests/
 │   ├── router_tests.py
 │   ├── answer_cases.py
-│   └── history_tests.py
+│   ├── history_tests.py
+│   └── session_store_tests.py   会话隔离 / TTL / 并发
 ├── FAISS_INDEX/                 生成，gitignore
 └── logs/                        生成，gitignore
 ```
@@ -119,6 +121,8 @@ copy .env.example .env            # 填入 DEEPSEEK_API_KEY
 
 **多会话**：每个浏览器一个会话。首次请求时服务端下发 `httponly` cookie（`sid`），会话存在进程内存，`config.SESSION_TTL`（默认 30 分钟）空闲过期；同一会话的请求串行执行，不同会话并行。
 
+**单 worker 运行**：会话存在进程内存，不要加 `--workers`（多进程会各存一份，同一用户可能落到不同进程导致会话丢失）；要多 worker 需把会话移到 Redis，或做 sticky session。
+
 启动后可访问 `/docs` 使用自动生成的接口调试页。
 
 ## 评估
@@ -149,7 +153,11 @@ copy .env.example .env            # 填入 DEEPSEEK_API_KEY
 - 多候选歧义：「你们有耳机吗 → 它多少钱」时两套都会猜一个、不反问（方案已定，未实现）
 - 型号简称（`星耀 X5` 而非完整名）不触发精确匹配
 - 关键词判据可能误伤「排除式表述」（详见 evaluation/README.md 第 7 节）
+- 单 worker：会话在进程内存，未做 Redis / 多实例
 
 ## 后续计划
 
-- 部署上云（11 月中下）
+- ~~部署上云~~ ✅ 已部署（阿里云 · FastAPI · 多用户会话）
+- 文档知识库导入（政策 / FAQ）
+- 更大商品库下的召回质量验证
+- 多 worker 时把会话移到 Redis
